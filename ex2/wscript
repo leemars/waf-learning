@@ -1,0 +1,14 @@
+def options(opt):
+    opt.load('compiler_c')
+
+
+def configure(cnf):
+    cnf.load('compiler_c')
+
+
+def build(bld):
+    bld.shlib(target='add', source='add.c')
+    bld.stlib(target='sub', source='sub.c')
+    bld.program(target='calc', source='calc.c', use='add sub')
+
+# vim: set ft=python:
