@@ -55,7 +55,7 @@ Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
 wscript 基础
 ============
 
-单文件工程: hello world
+ex1 - 单文件工程: hello world
 -----------------------
 
 ### 任务
@@ -108,7 +108,7 @@ $ ./build/hello
 Hello, world
 ```
 
-多文件工程：calculator
+ex2 - 多文件工程：calculator
 ----------------------
 
 ### 任务
