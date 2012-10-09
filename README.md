@@ -62,17 +62,6 @@ Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
 
 任务：只有一个 C++ 程序 hello.cpp 文件 ，要求把这个文件编译成可执行文件。
 
-hello.cpp 文件：
-```cpp
-#include <stdio.h>
-
-int main() {
-    puts("Hello, world");
-    return 0;
-}
-```
-
-wscript 文件：
 ```python
 def options(opt):
     opt.load('compiler_cxx')
@@ -115,3 +104,24 @@ Hello, world
 在 options 和 build 阶段，通过 `load` 加载 `compiler_cxx` 这个 waf 的 Tools，用于编译 C++ 程序。如果要编译 C 程序，可以对应加载 `compiler_c`。
 
 在 build 阶段，通过 `program` 和指定 `target` 以及 `source`，就从 hello.cpp 生成了 hello。所有产出均放在 build/ 目录下。
+
+### 多文件工程：calculator
+
+任务：C 工程，将 add.c 编译成动态链接库 add ，将 sub.c 编译成静态链接库 sub ，编译 calc.c 并链接 add 与 sub 生成 calc 。
+
+```python
+def options(opt):
+    opt.load('compiler_c')
+
+
+def configure(cnf):
+    cnf.load('compiler_c')
+
+
+def build(bld):
+    bld.shlib(target='add', source='add.c')
+    bld.stlib(target='sub', source='sub.c')
+    bld.program(target='calc', source='calc.c', use='add sub')
+```
+
+`shlib` 是 shard library 的缩写，用于生成动态链接库。`stlib` 是 static library 的缩写，用于生成静态链接库。在 `program` 时，用 `use` 指定需要链接的库。注意：通过 `use` 指定的是项目内部生成的库，如果需要链接系统提供的库，需要使用另外的关键字。
