@@ -108,4 +108,6 @@ Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ut/build'
 [2/2] cxxprogram: build/hello.cpp.1.o -> build/hello
 Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
 'build' finished successfully (0.754s)
+$ ./build/hello
+Hello, world
 ```
