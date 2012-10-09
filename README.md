@@ -20,11 +20,11 @@ $ python waf-light
 wscript 是一个 Python 脚本.
 
 ```python
-def configure(ctx):
+def configure(cnf):
     pass
 
 
-def build(ctx):
+def build(bld):
     pass
 ```
 
