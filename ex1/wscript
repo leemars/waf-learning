@@ -1,0 +1,12 @@
+def options(opt):
+    opt.load('compiler_cxx')
+
+
+def configure(cnf):
+    cnf.load('compiler_cxx')
+
+
+def build(bld):
+    bld.program(target='hello', source='hello.cpp')
+
+# vim: set ft=python:
