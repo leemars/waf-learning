@@ -83,7 +83,7 @@ def configure(cnf):
 
 
 def build(bld):
-    bld.program(source='hello.cpp', target='hello')
+    bld.program(target='hello', source='hello.cpp')
 ```
 
 构建：
@@ -114,4 +114,4 @@ Hello, world
 
 在 options 和 build 阶段，通过 `load` 加载 `compiler_cxx` 这个 waf 的 Tools，用于编译 C++ 程序。如果要编译 C 程序，可以对应加载 `compiler_c`。
 
-在 build 阶段，通过 `program` 和指定 `source` 以及 `target`，就从 hello.cpp 生成了 hello。所有产出均放在 build/ 目录下。
+在 build 阶段，通过 `program` 和指定 `target` 以及 `source`，就从 hello.cpp 生成了 hello。所有产出均放在 build/ 目录下。
