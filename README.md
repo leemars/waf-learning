@@ -98,16 +98,18 @@ waf [commands] [options]
                         On this platform (darwin) the following C++ Compiler
                         will be checked by default: "g++"
 $ waf configure
-Setting top to                           : /Users/leemars/Workspace/waf-learning/ut 
-Setting out to                           : /Users/leemars/Workspace/waf-learning/ut/build 
+Setting top to                           : /Users/leemars/Workspace/waf-learning/ex1 
+Setting out to                           : /Users/leemars/Workspace/waf-learning/ex1/build 
 Checking for 'g++' (c++ compiler)        : /usr/bin/g++ 
-'configure' finished successfully (0.424s)
+'configure' finished successfully (0.044s)
 $ waf build
-Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ut/build'
+Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ex1/build'
 [1/2] cxx: hello.cpp -> build/hello.cpp.1.o
 [2/2] cxxprogram: build/hello.cpp.1.o -> build/hello
-Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
-'build' finished successfully (0.754s)
+Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ex1/build'
+'build' finished successfully (0.115s)
 $ ./build/hello
 Hello, world
 ```
+
+`compiler_cxx` 是 waf 的一个 Tools, 
