@@ -112,4 +112,6 @@ $ ./build/hello
 Hello, world
 ```
 
-`compiler_cxx` 是 waf 的一个 Tools, 
+在 options 和 build 阶段，通过 `load` 加载 `compiler_cxx` 这个 waf 的 Tools，用于编译 C++ 程序。如果要编译 C 程序，可以对应加载 `compiler_c`。
+
+在 build 阶段，通过 `program` 和指定 `source` 以及 `target`，就从 hello.cpp 生成了 hello。所有产出均放在 build/ 目录下。
