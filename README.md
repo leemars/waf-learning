@@ -60,9 +60,10 @@ Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
 
 ### 单文件工程: hello world
 
-```cpp
-// hello.cpp
+任务：只有一个 C++ 程序 hello.cpp 文件 ，要求把这个文件编译成可执行文件。
 
+hello.cpp 文件：
+```cpp
 #include <stdio.h>
 
 int main() {
@@ -71,9 +72,8 @@ int main() {
 }
 ```
 
+wscript 文件：
 ```python
-# wscript
-
 def options(opt):
     opt.load('compiler_cxx')
 
@@ -84,4 +84,28 @@ def configure(cnf):
 
 def build(bld):
     bld.program(source='hello.cpp', target='app')
+```
+
+构建：
+```
+$ waf --help
+waf [commands] [options]
+
+... ignore ...
+
+  C++ Compiler Options:
+    --check-cxx-compiler=CHECK_CXX_COMPILER
+                        On this platform (darwin) the following C++ Compiler
+                        will be checked by default: "g++"
+$ waf configure
+Setting top to                           : /Users/leemars/Workspace/waf-learning/ut 
+Setting out to                           : /Users/leemars/Workspace/waf-learning/ut/build 
+Checking for 'g++' (c++ compiler)        : /usr/bin/g++ 
+'configure' finished successfully (0.424s)
+$ waf build
+Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ut/build'
+[1/2] cxx: hello.cpp -> build/hello.cpp.1.o
+[2/2] cxxprogram: build/hello.cpp.1.o -> build/app
+Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
+'build' finished successfully (0.128s)
 ```
