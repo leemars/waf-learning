@@ -83,7 +83,7 @@ def configure(cnf):
 
 
 def build(bld):
-    bld.program(source='hello.cpp', target='app')
+    bld.program(source='hello.cpp', target='hello')
 ```
 
 构建：
@@ -105,7 +105,7 @@ Checking for 'g++' (c++ compiler)        : /usr/bin/g++
 $ waf build
 Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ut/build'
 [1/2] cxx: hello.cpp -> build/hello.cpp.1.o
-[2/2] cxxprogram: build/hello.cpp.1.o -> build/app
+[2/2] cxxprogram: build/hello.cpp.1.o -> build/hello
 Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
-'build' finished successfully (0.128s)
+'build' finished successfully (0.754s)
 ```
