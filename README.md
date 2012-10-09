@@ -42,3 +42,33 @@ Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ut/build'
 Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ut/build'
 'build' finished successfully (0.004s)
 ```
+
+## wscript 基础
+
+### 单文件工程: hello world
+
+```cpp
+// hello.cpp
+
+#include <stdio.h>
+
+int main() {
+    puts("Hello, world");
+    return 0;
+}
+```
+
+```python
+# wscript
+
+def options(opt):
+    opt.load('compiler_cxx')
+
+
+def configure(cnf):
+    cnf.load('compiler_cxx')
+
+
+def build(bld):
+    bld.program(source='hello.cpp', target='app')
+```
