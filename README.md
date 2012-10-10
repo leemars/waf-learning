@@ -153,3 +153,18 @@ Waf: Entering directory `/Users/leemars/Workspace/waf-learning/ex2/build'
 Waf: Leaving directory `/Users/leemars/Workspace/waf-learning/ex2/build'
 'build' finished successfully (1.000s)
 ```
+
+Cookbook
+========
+
+自动检测是否需要触发 configure
+------------------------------
+
+默认情况下，waf configure 不会自动触发，有时遇到修改完 wscript 以后会忘记触发 configure，导致出现奇怪的问题，如果每次都自已触发又很低效。所以可以选择让 waf 自已决定是否触发。
+
+在 wscript 文件最前加入下列语句即可:
+
+```python
+from waflib import Configure
+Configure.autoconfig = True
+```
