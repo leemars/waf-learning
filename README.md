@@ -168,3 +168,8 @@ Cookbook
 from waflib import Configure
 Configure.autoconfig = True
 ```
+
+不希望 waf 自动解压工作目录
+---------------------------
+
+通过 waf-light 生成的 waf 是一个自解压的 python 程序，会解压出一个工作目录。如果不希望这样的话，完全可以不生成 waf，直接使用 waf-light，在其同级目录放置 waflib 即可。
